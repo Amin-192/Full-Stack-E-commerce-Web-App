@@ -8,14 +8,14 @@ const Header = () => {
     };
 
    const  scrollToBottom = () => {
-    const customPosition = 500; // Example: scroll to 500 pixels from the top
+    const customPosition = 500; 
 
     window.scrollTo({
       top: customPosition,
       behavior: 'smooth' 
         });
     };
-    
+
     return (
         <div className="ml-4">
             <div className='grid grid-cols-2 grid-rows-0 h-[500px] mt-8'>
@@ -26,7 +26,7 @@ const Header = () => {
                     <p className="mt-9 font-extralight">
                         Discover stylish Nike arrivals quality, comfort and innovation for your active life.
                     </p>
-                    <button  onClick={scrollToBottom} className="shadow-2xl mt-14 p-2 rounded-xl hover:scale-110 transition-all duration-300 bg-orange-300  text-white ">
+                    <button  onClick={scrollToBottom} className="shadow-2xl mt-14 p-2 rounded-xl hover:scale-110 hover:bg-white hover:text-orange-300 hover:border hover:border-orange-300 transition-all duration-300 bg-orange-300  text-white ">
                         shop now  <span className="text-md bg-white p-1 rounded-md text-black">➡️</span>
                     </button>
                 </div>
