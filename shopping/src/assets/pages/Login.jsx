@@ -9,9 +9,7 @@ const Login = () => {
     const handleSubmit = (e) =>{
         e.preventDefault();
         console.log("Submitting form...");
-        console.log("Name:", name);
-      
-        console.log("Password:", password);
+        
         axios.post('http://localhost:3001/Login', {
     name,
     password
