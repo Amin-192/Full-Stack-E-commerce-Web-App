@@ -22,7 +22,18 @@ function Nav() {
         <li className='hover:bg-orange-300 shadow-2xl p-4 text-lg font-serif rounded-xl hover:scale-110 transition-all duration-300 text-center' style={{ width: '100px' }}>
           <Link to="/ColorPicker">Colors</Link>
         </li>
+        <div className="flex gap-5 relative left-[20%]">
+        
+        <li className='hover:bg-orange-300 shadow-2xl p-4 text-lg font-serif rounded-xl hover:scale-110 transition-all duration-300 text-center' style={{ width: '100px' }}>
+          <Link to="/Login">Login</Link>
+        </li>
+        <li className='hover:bg-orange-300 shadow-2xl p-4 text-lg font-serif rounded-xl hover:scale-110 transition-all duration-300 text-center' style={{ width: '100px' }}>
+          <Link to="/Signup">Sign up</Link>
+        </li>
+        
+        </div>
       </ul>
+      
     </nav>
   );
 }
