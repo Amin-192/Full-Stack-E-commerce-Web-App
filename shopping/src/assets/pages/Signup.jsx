@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios"
 const Signup = () => {
 
@@ -7,6 +7,7 @@ const Signup = () => {
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
 
+    const navigate = useNavigate()
     const handleSubmit = (e) =>{
         e.preventDefault();
         console.log("Submitting form...");
@@ -18,7 +19,9 @@ const Signup = () => {
             email,
             password
         })
-        .then( result => console.log(result))
+        .then( result => {console.log(result)
+        navigate('/Login')
+        })
         .catch( err => console.error(err))
 
     }
@@ -30,12 +33,12 @@ const Signup = () => {
       
       Sign Up Page</h1>
 
-      <form action="" onSubmit={handleSubmit}>
+      <form action="" id="signup" onSubmit={handleSubmit}>
 
           <div className=" mt-12 grid grid-rows-3 gap-8 relative left-[10%]">
-              <input type="text" placeholder="Name" className="shadow-2xl text-2xl  p-2 w-[330px]  rounded-xl" onChange={(e) =>{setName(e.target.value)}}/>
-              <input type="text" placeholder="Email" className="shadow-2xl text-2xl  p-2 w-[330px]  rounded-xl" onChange={(e) =>{setEmail(e.target.value)}}/>
-              <input type="text" placeholder="Password" className="shadow-2xl text-2xl  p-2 w-[330px]  rounded-xl" onChange={(e) =>{setPassword(e.target.value)}}/>
+              <input required type="text" placeholder="Name" className="shadow-2xl text-2xl  p-2 w-[330px]  rounded-xl" onChange={(e) =>{setName(e.target.value)}}/>
+              <input required type="email" placeholder="Email" className="shadow-2xl text-2xl  p-2 w-[330px]  rounded-xl" onChange={(e) =>{setEmail(e.target.value)}}/>
+              <input required type="password" placeholder="Password" className="shadow-2xl text-2xl  p-2 w-[330px]  rounded-xl" onChange={(e) =>{setPassword(e.target.value)}}/>
               <button type="submit" className='hover:bg-orange-300 shadow-2xl p-4 text-lg font-serif rounded-xl hover:scale-110 transition-all duration-300 text-center ' style={{ width: '100px' }}>Sign Up</button>
           </div>
       </form>
