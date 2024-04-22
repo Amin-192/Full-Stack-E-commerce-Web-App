@@ -7,12 +7,14 @@ import CV from "./assets/pages/CV";
 import ColorPicker from "./assets/pages/ColorPicker";
 import Login from "./assets/pages/Login";
 import Signup from "./assets/pages/Signup";
+import Nav2 from "./assets/components/Nav2";
 
 function App() {
   return (
     <Router>
       <div>
-        <Nav />
+        
+        <Nav2/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

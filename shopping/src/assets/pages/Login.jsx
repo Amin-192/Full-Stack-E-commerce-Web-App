@@ -44,7 +44,7 @@ const Login = () => {
           </div>
       </form>
       <div className="mt-9 ">
-<button type="submit" className='hover:bg-orange-300 shadow-2xl p-4 text-lg font-serif rounded-xl hover:scale-110 transition-all duration-300 text-center ' style={{ width: '100px' }}>Log In</button>
+
 <h1 className="mt-4">If you do not have an account</h1>
 <li className='hover:bg-orange-300 shadow-2xl p-4 text-lg font-serif rounded-xl hover:scale-110 transition-all duration-300 text-center relative left-[40%] w-[90px] ' style={{ width: '140px' }}>
           <Link to="/Signup">Sign Up</Link>
