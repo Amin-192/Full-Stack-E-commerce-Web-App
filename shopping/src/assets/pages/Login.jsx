@@ -1,29 +1,30 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link,  } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 const Login = () => {
     const [name, setName] = useState()
     
     const [password, setPassword] = useState()
-    const navigate = useNavigate()
+    
+axios.defaults.withCredentials=true;
+    
 
-
-   
-    const handleSubmit = (e) =>{
+const handleSubmit = (e) =>{
         e.preventDefault();
         console.log("Submitting form...");
         
         axios.post('http://localhost:3001/Login', {
-    name,
-    password
-})
-.then(result => {
-    console.log(result.data);
-    if (result.data === 'success') {
-        navigate('/');
-    }
-})
-.catch(err => console.error(err));
+          name,
+          password
+      })
+      .then(result => {
+          console.log(result.data);
+          if (result.data.success) {
+              window.location.href = result.data.redirect; // Redirect to the specified URL
+          }
+      })
+      .catch(err => console.error(err));
+      
 
     }
   return (
@@ -48,6 +49,13 @@ const Login = () => {
 <h1 className="mt-4">If you do not have an account</h1>
 <li className='hover:bg-orange-300 shadow-2xl p-4 text-lg font-serif rounded-xl hover:scale-110 transition-all duration-300 text-center relative left-[40%] w-[90px] ' style={{ width: '140px' }}>
           <Link to="/Signup">Sign Up</Link>
+          
+        </li>
+
+        
+        <li className='hover:bg-orange-300 mt-5 shadow-2xl p-4 text-lg font-serif rounded-xl hover:scale-110 transition-all duration-300 text-center relative left-[40%] w-[90px] ' style={{ width: '140px' }}>
+         
+          <Link to="/">⬅ Home</Link>
         </li>
 </div>
 </div>
