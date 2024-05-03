@@ -2,7 +2,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./assets/pages/Home";
 import About from "./assets/pages/About";
-import Nav from "./assets/components/Nav";
+
 import CV from "./assets/pages/CV";
 import ColorPicker from "./assets/pages/ColorPicker";
 import Login from "./assets/pages/Login";
